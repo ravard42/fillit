@@ -1,0 +1,13 @@
+[avardrobin fillit]$ time ./fillit sample.fillit
+DDAABBBB
+CDDAHHEE
+CCCAGHHE
+FFFFGGGE
+LLIIJJJJ
+KLLIPPMM
+KKKIOPPM
+NNNNOOOM
+
+real	687m4.529s
+user	656m30.895s
+sys	1m58.805s
