@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_input.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/13 14:42:26 by ravard            #+#    #+#             */
+/*   Updated: 2016/04/13 15:09:59 by ravard           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 void			error(void)
@@ -8,17 +20,18 @@ void			error(void)
 
 t_fillist		*load_extern_file_lst(void)
 {
-	int		fd;
+	int			fd;
 	char		*buf;
 	t_fillist	*lst;
 	t_fillist	*lst2;
 
-	if ((fd = open("/Users/avardrobin/fillit/extern_file.txt", O_RDONLY)) == -1)
+	if ((fd = open("/nfs/2015/r/ravard/fillit/extern_file.txt", O_RDONLY))
+				== -1)
 	{
 		ft_putstr("failure in the opening of extern_file\n");
 		exit(0);
 	}
-	buf = (char *)malloc(sizeof(char) * 21);	
+	buf = (char *)malloc(sizeof(char) * 21);
 	lst2 = NULL;
 	while (read(fd, buf, 21))
 	{
@@ -45,7 +58,7 @@ static int		check_one(char *str)
 	while (str[++i])
 	{
 		if (str[i] == '.')
-			vide ++;
+			vide++;
 		else if (str[i] == '#')
 			fill++;
 		if ((i == 4 || i == 9 || i == 14 || i == 19) && str[i] != '\n')

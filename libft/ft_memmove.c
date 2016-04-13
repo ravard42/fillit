@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/17 00:00:19 by ravard            #+#    #+#             */
-/*   Updated: 2016/01/18 17:38:45 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/13 15:11:26 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*dst0;
 	const char	*src0;
-	int		i;
+	int			i;
 
 	dst0 = (char *)dst;
 	src0 = (const char *)src;

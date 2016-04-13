@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_grille.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/13 14:54:44 by ravard            #+#    #+#             */
+/*   Updated: 2016/04/13 14:54:45 by ravard           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
-int	square_initial_size(t_fillist *lst)
+int		square_initial_size(t_fillist *lst)
 {
 	int	i;
 	int	j;
@@ -25,8 +37,8 @@ int	square_initial_size(t_fillist *lst)
 char	**load_tab(int square_size)
 {
 	char	**tab;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	tab = (char **)malloc(sizeof(char *) * (square_size + 1));
 	i = 0;

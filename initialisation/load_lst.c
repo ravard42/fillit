@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 00:03:46 by ravard            #+#    #+#             */
-/*   Updated: 2016/01/29 02:34:53 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/13 14:52:47 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,22 @@ t_fillist		*set_rang(t_fillist *lst)
 
 static void		fd_error(void)
 {
-	ft_putstr("failure in the opening of argv[1], le fichier n'existe peut etre pas\n");
+	ft_putstr("failure in the opening of file");
+	ft_putchar('\n');
 	exit(0);
 }
 
 t_fillist		*load_lst(char *file, t_fillist *all)
 {
-	int		fd;
-	int		ret[2];
+	int			fd;
+	int			ret[2];
 	char		*buf;
 	t_fillist	*lst;
 	t_fillist	*lst2;
 
 	if ((fd = open(file, O_RDONLY)) == -1)
 		fd_error();
-	buf = (char *)malloc(sizeof(char) * 21);	
+	buf = (char *)malloc(sizeof(char) * 21);
 	lst2 = NULL;
 	while ((ret[0] = read(fd, buf, 21)))
 	{

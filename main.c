@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/04/13 14:40:16 by ravard            #+#    #+#             */
+/*   Updated: 2016/04/13 14:40:54 by ravard           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fillit.h"
 
 int		main(int argc, char **argv)
 {
 	t_fillist	*all;
 	t_fillist	*lst;
-	int		n;
+	int			n;
 	char		**tab;
 
 	if (argc == 2)
@@ -13,7 +25,7 @@ int		main(int argc, char **argv)
 		lst = load_lst(argv[1], all);
 		n = square_initial_size(lst);
 		tab = load_tab(n);
-		while(iter_next_tetrimino(tab, &lst) == 0)
+		while (iter_next_tetrimino(tab, &lst) == 0)
 		{
 			free(tab);
 			tab = NULL;

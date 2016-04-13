@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 23:48:28 by ravard            #+#    #+#             */
-/*   Updated: 2016/01/29 02:34:17 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/13 14:56:49 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ static void		set_var(int *increm, t_fillist *lst)
 		set_var_r(increm, lst->a_abs, lst->d);
 		lst->a_abs[0] = 0;
 		lst->a_abs[1] = 0;
-		
 	}
 	increm[0]++;
 }
@@ -55,9 +54,9 @@ static void		trade_tetrimino(t_fillist *lst, char *content)
 	init_var(lst);
 	if (lst->a_abs && lst->b && lst->c && lst->d)
 	{
-		increm[0] = 0;  // on numerote les cases du tetrimino de 0 a 3 en lisant le char * de gauche a droite et de haut en bas
-		increm[1] = 0;  // position du curseur de lecture suivant les x
-		increm[2] = 0;	// position du curseur de lecture suivant les y
+		increm[0] = 0;
+		increm[1] = 0;
+		increm[2] = 0;
 		while (increm[0] != 4)
 		{
 			if (*content == '#')
@@ -75,9 +74,6 @@ static void		trade_tetrimino(t_fillist *lst, char *content)
 	else
 		ft_putstr("allocation error");
 }
-
-
-
 
 t_fillist		*new_fillist_elem(t_fillist *list_prev, char *content)
 {

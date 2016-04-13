@@ -6,15 +6,16 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/17 00:30:35 by ravard            #+#    #+#             */
-/*   Updated: 2016/01/17 00:43:15 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/13 15:14:16 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list				*load_return_list(char **tab , int n, t_list **return_list)
+static t_list				*load_return_list(char **tab,
+								int n, t_list **return_list)
 {
-	int	i;
+	int		i;
 	t_list	*buf;
 
 	i = n;
@@ -34,9 +35,9 @@ static t_list				*load_return_list(char **tab , int n, t_list **return_list)
 	return (NULL);
 }
 
-t_list					*ft_strsplit_list(const char *s, char c)
+t_list						*ft_strsplit_list(const char *s, char c)
 {
-	int			n;
+	int				n;
 	char			**tab;
 	t_list			**return_list;
 
