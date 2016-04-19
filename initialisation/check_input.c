@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/13 14:42:26 by ravard            #+#    #+#             */
-/*   Updated: 2016/04/13 15:09:59 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/19 15:16:37 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ t_fillist		*load_extern_file_lst(void)
 	t_fillist	*lst;
 	t_fillist	*lst2;
 
-	if ((fd = open("/nfs/2015/r/ravard/fillit/extern_file.txt", O_RDONLY))
-				== -1)
+	if ((fd = open("./extern_file.txt", O_RDONLY)) == -1)
 	{
 		ft_putstr("failure in the opening of extern_file\n");
 		exit(0);
