@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/28 23:31:57 by ravard            #+#    #+#             */
-/*   Updated: 2016/04/13 15:07:53 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/20 00:36:03 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_fillist
 
 t_fillist			*new_fillist_elem(t_fillist *list_prev, char *content);
 t_fillist			*set_rang(t_fillist *lst);
+char				**extern_file(void);
 t_fillist			*load_extern_file_lst(void);
 void				error(void);
 t_fillist			*check_and_set(char *buf, t_fillist *all, t_fillist *lst);

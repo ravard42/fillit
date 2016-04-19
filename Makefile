@@ -2,6 +2,7 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 NAME = fillit
 SRC =	initialisation/new_fillist_elem.c\
+	initialisation/extern_file.c\
 	initialisation/check_input.c\
 	initialisation/load_lst.c\
 	initialisation/init_grille.c\

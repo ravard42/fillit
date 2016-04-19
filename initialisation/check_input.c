@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/04/13 14:42:26 by ravard            #+#    #+#             */
-/*   Updated: 2016/04/19 15:16:37 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/20 00:40:18 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,19 @@ void			error(void)
 
 t_fillist		*load_extern_file_lst(void)
 {
-	int			fd;
-	char		*buf;
+	char		**tab;
+	int			i;
 	t_fillist	*lst;
 	t_fillist	*lst2;
 
-	if ((fd = open("./extern_file.txt", O_RDONLY)) == -1)
-	{
-		ft_putstr("failure in the opening of extern_file\n");
-		exit(0);
-	}
-	buf = (char *)malloc(sizeof(char) * 21);
+	tab = extern_file();
 	lst2 = NULL;
-	while (read(fd, buf, 21))
+	i = -1;
+	while (tab[++i])
 	{
-		buf[20] = '\0';
 		lst = lst2;
-		lst2 = new_fillist_elem(lst, buf);
+		lst2 = new_fillist_elem(lst, tab[i]);
 	}
-	close(fd);
 	while (lst2->prev)
 		lst2 = lst2->prev;
 	lst2 = set_rang(lst2);
