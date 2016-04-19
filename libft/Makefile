@@ -78,7 +78,7 @@ $(NAME): $(OBJ)
 	$(CC) -o $@ -c $< -I $(INCLUDE) $(FLAGS)
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
