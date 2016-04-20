@@ -6,7 +6,7 @@
 /*   By: ravard <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/29 00:03:46 by ravard            #+#    #+#             */
-/*   Updated: 2016/04/19 23:59:56 by ravard           ###   ########.fr       */
+/*   Updated: 2016/04/20 12:29:02 by ravard           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_fillist		*set_rang(t_fillist *lst)
 {
 	int	i;
 
+	while (lst->prev)
+		lst = lst->prev;
 	i = 1;
 	lst->rang = i;
 	while (lst->next)
@@ -58,8 +60,9 @@ t_fillist		*load_lst(char *file, t_fillist *all)
 	if (ret[1] == 21)
 		error();
 	close(fd);
-	while (lst2->prev)
-		lst2 = lst2->prev;
-	lst2 = set_rang(lst2);
+	if (lst2)
+		lst2 = set_rang(lst2);
+	else
+		error();
 	return (lst2);
 }
